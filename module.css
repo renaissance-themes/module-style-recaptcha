@@ -1,0 +1,22 @@
+/* Vanilla/blank: Magento_ReCaptchaFrontendUi module CSS.
+   The vendor module ships this at MODULE level (no blank theme override):
+   vendor/magento/module-re-captcha-frontend-ui/view/frontend/web/css/source/
+   _module.less. One rule: the hidden honeypot/required checkbox the reCAPTCHA
+   widget renders so native form validation can fire while the control stays
+   invisible (a deliberate visibility:visible inside an opacity-0 1px box, NOT
+   the sr-only clip pattern, so port it verbatim).
+   Values match the compiled pub/static/frontend/Magento/blank styles-m.css
+   byte for byte; everything is literal px in the source (kept: a 1px hide box
+   is fixed chrome, not type-scale spacing). */
+@layer modules {
+
+  .required-captcha.checkbox {
+    position: absolute;
+    display: block;
+    visibility: visible;
+    overflow: hidden;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+}
